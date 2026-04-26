@@ -2,9 +2,10 @@ from __future__ import annotations
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import func, or_
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 
-from app.database import get_db
+from app.database import Base, engine, get_db
 from app.models import User
 from app.schemas import RegisterResponse, TokenResponse, UserCreate, UserLogin, UserRead
 from app.security import (
@@ -72,16 +73,25 @@ def register(
 @router.post("/login", response_model=TokenResponse)
 def login(payload: UserLogin, db: Session = Depends(get_db)):
     identifier = payload.username.strip()
-    user = (
-        db.query(User)
-        .filter(
-            or_(
-                func.lower(User.username) == identifier.lower(),
-                func.lower(User.email) == identifier.lower(),
+
+    def find_user() -> User | None:
+        return (
+            db.query(User)
+            .filter(
+                or_(
+                    func.lower(User.username) == identifier.lower(),
+                    func.lower(User.email) == identifier.lower(),
+                )
             )
+            .first()
         )
-        .first()
-    )
+
+    try:
+        user = find_user()
+    except SQLAlchemyError:
+        db.rollback()
+        Base.metadata.create_all(bind=engine)
+        user = find_user()
     if user is None or not verify_password(payload.password, user.password_hash):
         if "@" in identifier:
             supabase_user = authenticate_supabase_credentials(identifier, payload.password)

@@ -12,6 +12,7 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jose import JWTError, jwt
 from passlib.context import CryptContext
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 
 from app.database import get_db
@@ -96,7 +97,11 @@ def get_user_from_local_token(token: str, db: Session) -> User | None:
 
     if not username:
         return None
-    return db.query(User).filter(User.username == username).first()
+    try:
+        return db.query(User).filter(User.username == username).first()
+    except SQLAlchemyError:
+        db.rollback()
+        return None
 
 
 def fetch_supabase_user(token: str) -> dict | None:
@@ -229,10 +234,14 @@ def build_unique_username(db: Session, preferred_username: str) -> str:
     base_username = re.sub(r"[^a-zA-Z0-9_.-]+", "", preferred_username or "usuario")[:40] or "usuario"
     candidate = base_username
     suffix = 1
-    while db.query(User).filter(User.username == candidate).first() is not None:
-        suffix_text = f"-{suffix}"
-        candidate = f"{base_username[: max(1, 40 - len(suffix_text))]}{suffix_text}"
-        suffix += 1
+    try:
+        while db.query(User).filter(User.username == candidate).first() is not None:
+            suffix_text = f"-{suffix}"
+            candidate = f"{base_username[: max(1, 40 - len(suffix_text))]}{suffix_text}"
+            suffix += 1
+    except SQLAlchemyError:
+        db.rollback()
+        return base_username
     return candidate
 
 
@@ -241,7 +250,11 @@ def get_or_create_supabase_user(db: Session, supabase_user: dict) -> User | None
     if not email:
         return None
 
-    existing_user = db.query(User).filter(User.email == email).first()
+    try:
+        existing_user = db.query(User).filter(User.email == email).first()
+    except SQLAlchemyError:
+        db.rollback()
+        return None
     if existing_user is not None:
         return existing_user
 
