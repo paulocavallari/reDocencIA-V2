@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from datetime import datetime
 from pathlib import Path
 from threading import Lock, Thread
@@ -247,3 +248,30 @@ if FRONTEND_DIST_DIR.exists():
             return FileResponse(requested_path)
 
         return FileResponse(FRONTEND_DIST_DIR / "index.html")
+
+
+class ApiPrefixCompatApp:
+    def __init__(self, asgi_app):
+        self.asgi_app = asgi_app
+        self.passthrough_paths = {"/docs", "/openapi.json", "/redoc"}
+
+    def __getattr__(self, name):
+        return getattr(self.asgi_app, name)
+
+    async def __call__(self, scope, receive, send):
+        if scope.get("type") != "http":
+            await self.asgi_app(scope, receive, send)
+            return
+
+        path = scope.get("path", "")
+        if path and not path.startswith("/api") and path not in self.passthrough_paths:
+            rewritten = dict(scope)
+            rewritten["path"] = f"/api{path}" if path.startswith("/") else f"/api/{path}"
+            await self.asgi_app(rewritten, receive, send)
+            return
+
+        await self.asgi_app(scope, receive, send)
+
+
+if os.getenv("VERCEL"):
+    app = ApiPrefixCompatApp(app)
