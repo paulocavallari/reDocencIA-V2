@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --primary: 226 71% 40%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 214 32% 91%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 226 71% 40%;
+    --radius: 0.5rem;
+    --success: 142 71% 45%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  img {
+    @apply block max-w-full;
+  }
+}
+
+@layer components {
+  /* ─── Auth pages ─── */
+  .auth-page-shell {
+    @apply relative min-h-screen overflow-hidden bg-background;
+  }
+
+  .auth-gradient-panel {
+    background: linear-gradient(135deg, hsl(226, 71%, 40%) 0%, hsl(222, 47%, 11%) 100%);
+  }
+
+  /* ─── Rich text editor ─── */
+  .plan-editor {
+    @apply overflow-hidden rounded-2xl border border-border bg-white;
+  }
+
+  .plan-editor .ql-toolbar.ql-snow {
+    @apply border-0 border-b border-border bg-secondary;
+  }
+
+  .plan-editor .ql-container.ql-snow {
+    @apply border-0;
+  }
+
+  .plan-editor .ql-editor {
+    min-height: 62vh;
+    @apply text-[17px] leading-7 text-foreground;
+  }
+}

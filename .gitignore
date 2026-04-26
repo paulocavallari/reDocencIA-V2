@@ -1,0 +1,24 @@
+.vercel/
+.venv/
+
+# Python
+**/__pycache__/
+**/.pytest_cache/
+*.pyc
+
+# Node
+**/node_modules/
+frontend/dist/
+
+# Local env / secrets
+.env
+.env.*
+!.env.example
+backend/.env.backend-*
+frontend/.env.local
+
+# Runtime artifacts
+backend/data.db
+frontend/test-results/
+frontend/playwright-report/
+frontend/playwright/.cache/

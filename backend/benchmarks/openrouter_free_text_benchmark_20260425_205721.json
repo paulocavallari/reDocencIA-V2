@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-04-25T20:57:21.496963+00:00",
+  "attempts_per_model": 1,
+  "max_output_tokens": 5000,
+  "models_tested": 3,
+  "ranking": [
+    {
+      "position": 1,
+      "model_id": "inclusionai/ling-2.6-flash:free",
+      "context_length": 262144,
+      "max_completion_tokens": 32768,
+      "success_rate": 1.0,
+      "median_ms": 8842.13,
+      "p95_ms": 8842.13,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 8842.13,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1777
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "model_id": "inclusionai/ling-2.6-1t:free",
+      "context_length": 262144,
+      "max_completion_tokens": 32768,
+      "success_rate": 1.0,
+      "median_ms": 18176.51,
+      "p95_ms": 18176.51,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 18176.51,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1942
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "model_id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+      "context_length": 32768,
+      "max_completion_tokens": null,
+      "success_rate": 0.0,
+      "median_ms": null,
+      "p95_ms": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 409.73,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        }
+      ]
+    }
+  ]
+}

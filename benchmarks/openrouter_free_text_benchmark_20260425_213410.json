@@ -1,0 +1,638 @@
+{
+  "generated_at": "2026-04-25T21:34:10.382122+00:00",
+  "attempts_per_model": 3,
+  "max_output_tokens": 5000,
+  "models_tested": 18,
+  "ranking": [
+    {
+      "position": 1,
+      "model_id": "liquid/lfm-2.5-1.2b-thinking:free",
+      "context_length": 32768,
+      "max_completion_tokens": null,
+      "success_rate": 1.0,
+      "median_ms": 3114.39,
+      "p95_ms": 3738.81,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 2973.48,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 885
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 3738.81,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1160
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 3114.39,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 947
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "model_id": "liquid/lfm-2.5-1.2b-instruct:free",
+      "context_length": 32768,
+      "max_completion_tokens": null,
+      "success_rate": 1.0,
+      "median_ms": 3225.71,
+      "p95_ms": 3459.59,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 3459.59,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 886
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 3225.71,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 954
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 2803.26,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 850
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "model_id": "inclusionai/ling-2.6-flash:free",
+      "context_length": 262144,
+      "max_completion_tokens": 32768,
+      "success_rate": 1.0,
+      "median_ms": 7832.83,
+      "p95_ms": 11278.71,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 7832.83,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1540
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 11278.71,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1967
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 6514.08,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1265
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "model_id": "nvidia/nemotron-3-nano-30b-a3b:free",
+      "context_length": 256000,
+      "max_completion_tokens": null,
+      "success_rate": 1.0,
+      "median_ms": 9979.9,
+      "p95_ms": 10017.33,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 9396.21,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 2465
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 10017.33,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 2500
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 9979.9,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 2710
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "model_id": "inclusionai/ling-2.6-1t:free",
+      "context_length": 262144,
+      "max_completion_tokens": 32768,
+      "success_rate": 1.0,
+      "median_ms": 20223.97,
+      "p95_ms": 20726.28,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 20223.97,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 2166
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 15641.68,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1663
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 20726.28,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 2117
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "model_id": "openai/gpt-oss-20b:free",
+      "context_length": 131072,
+      "max_completion_tokens": 8192,
+      "success_rate": 1.0,
+      "median_ms": 37492.21,
+      "p95_ms": 39717.32,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 31847.57,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1526
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 39717.32,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1681
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 37492.21,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1546
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "model_id": "nvidia/nemotron-nano-9b-v2:free",
+      "context_length": 128000,
+      "max_completion_tokens": null,
+      "success_rate": 1.0,
+      "median_ms": 37629.21,
+      "p95_ms": 61984.62,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 37629.21,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1691
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 61984.62,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1706
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 34719.99,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1696
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "model_id": "openai/gpt-oss-120b:free",
+      "context_length": 131072,
+      "max_completion_tokens": 131072,
+      "success_rate": 1.0,
+      "median_ms": 75621.7,
+      "p95_ms": 78080.31,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 78080.31,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 2257
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 75621.7,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 2508
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 57882.04,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 2099
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "model_id": "z-ai/glm-4.5-air:free",
+      "context_length": 131072,
+      "max_completion_tokens": 96000,
+      "success_rate": 1.0,
+      "median_ms": 98182.21,
+      "p95_ms": 121176.69,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 91411.2,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1402
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 98182.21,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1656
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 121176.69,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1502
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "model_id": "tencent/hy3-preview:free",
+      "context_length": 262144,
+      "max_completion_tokens": 262144,
+      "success_rate": 0.6667,
+      "median_ms": 100892.91,
+      "p95_ms": 140466.6,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 61319.22,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 5000
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 146707.01,
+          "status_code": 0,
+          "ok": false,
+          "error": "timeout",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 140466.6,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 5000
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "model_id": "minimax/minimax-m2.5:free",
+      "context_length": 196608,
+      "max_completion_tokens": 8192,
+      "success_rate": 1.0,
+      "median_ms": 102743.36,
+      "p95_ms": 369961.49,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 369961.49,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 2782
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 102743.36,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 1913
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 56408.63,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 2203
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "model_id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "context_length": 262144,
+      "max_completion_tokens": 262144,
+      "success_rate": 1.0,
+      "median_ms": 120185.74,
+      "p95_ms": 120397.67,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 120185.74,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": null
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 120397.67,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": null
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 69622.24,
+          "status_code": 200,
+          "ok": true,
+          "error": null,
+          "completion_tokens": 3172
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "model_id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+      "context_length": 32768,
+      "max_completion_tokens": null,
+      "success_rate": 0.0,
+      "median_ms": null,
+      "p95_ms": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 608.7,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 293.38,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 282.48,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        }
+      ]
+    },
+    {
+      "position": 14,
+      "model_id": "meta-llama/llama-3.2-3b-instruct:free",
+      "context_length": 131072,
+      "max_completion_tokens": null,
+      "success_rate": 0.0,
+      "median_ms": null,
+      "p95_ms": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 304.16,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 288.68,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 365.17,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        }
+      ]
+    },
+    {
+      "position": 15,
+      "model_id": "meta-llama/llama-3.3-70b-instruct:free",
+      "context_length": 65536,
+      "max_completion_tokens": null,
+      "success_rate": 0.0,
+      "median_ms": null,
+      "p95_ms": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 287.21,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 277.5,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 292.61,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        }
+      ]
+    },
+    {
+      "position": 16,
+      "model_id": "nousresearch/hermes-3-llama-3.1-405b:free",
+      "context_length": 131072,
+      "max_completion_tokens": null,
+      "success_rate": 0.0,
+      "median_ms": null,
+      "p95_ms": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 384.96,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 284.22,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 284.14,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        }
+      ]
+    },
+    {
+      "position": 17,
+      "model_id": "qwen/qwen3-coder:free",
+      "context_length": 262000,
+      "max_completion_tokens": 262000,
+      "success_rate": 0.0,
+      "median_ms": null,
+      "p95_ms": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 382.9,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 289.82,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 334.89,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        }
+      ]
+    },
+    {
+      "position": 18,
+      "model_id": "qwen/qwen3-next-80b-a3b-instruct:free",
+      "context_length": 262144,
+      "max_completion_tokens": null,
+      "success_rate": 0.0,
+      "median_ms": null,
+      "p95_ms": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "elapsed_ms": 287.93,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 2,
+          "elapsed_ms": 281.71,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        },
+        {
+          "attempt": 3,
+          "elapsed_ms": 291.52,
+          "status_code": 429,
+          "ok": false,
+          "error": "Provider returned error",
+          "completion_tokens": null
+        }
+      ]
+    }
+  ]
+}

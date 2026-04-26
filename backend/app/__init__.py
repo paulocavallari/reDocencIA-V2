@@ -1,0 +1,1 @@
+"""redocêncIA backend application package."""
