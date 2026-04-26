@@ -264,13 +264,15 @@ class ApiPrefixCompatApp:
             return
 
         path = scope.get("path", "")
-        if path and not path.startswith("/api") and path not in self.passthrough_paths:
-            rewritten = dict(scope)
-            rewritten["path"] = f"/api{path}" if path.startswith("/") else f"/api/{path}"
-            await self.asgi_app(rewritten, receive, send)
-            return
+        rewritten = dict(scope)
+        rewritten["root_path"] = ""
 
-        await self.asgi_app(scope, receive, send)
+        if path and not path.startswith("/api") and path not in self.passthrough_paths:
+            rewritten["path"] = f"/api{path}" if path.startswith("/") else f"/api/{path}"
+        else:
+            rewritten["path"] = path
+
+        await self.asgi_app(rewritten, receive, send)
 
 
 if os.getenv("VERCEL"):
